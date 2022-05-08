@@ -1,7 +1,7 @@
 name: Github Actions Debug
 
 on:
-  pull-request:
+  pull_request:
     branches: 
       - develop
 
@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: action/checkout@v2
-    - name: Docker build and push
+      uses: actions/checkout@v2
+    - name: Docker build and push 
       uses: docker/build-push-action@v3
     - name: Compose up the docker
       run: docker-compose -f "docker-compose.yml" up -d --build
